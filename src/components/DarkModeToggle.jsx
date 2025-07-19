@@ -15,11 +15,11 @@ const DarkModeToggle = () => {
   return (
     <button
       onClick={toggleDark}
-      className="p-2 rounded-2xl bg-gray-200 dark:bg-gray-700 transition"
+      className="p-2 rounded-2xl bg-[#F5F5FF] dark:bg-[#3F2F70] transition"
       aria-label="Toggle dark mode"
     >
       <img
-        src={isDark ? MoonIcon : SunIcon}
+        src={isDark ? SunIcon : MoonIcon}
         alt={isDark ? "Dark mode" : "Light mode"}
         className="w-6 h-6"
       />
