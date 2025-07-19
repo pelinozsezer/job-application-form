@@ -9,15 +9,14 @@ const TextInput = ({
   placeholder = "",
   required = false,
   pattern,
-  icon: Icon,
+  icon,
 }) => {
   return (
     <div className="relative w-full">
-      {/* Üst çizgiye bindirilmiş gibi görünen label */}
       {label && (
         <label
           htmlFor={name}
-          className="absolute rounded-full left-4 -top-2.5 bg-[#F5F5FF] focus:bg-white px-1 text-sm text-gray-700 z-10"
+          className="absolute rounded-full left-4 -top-2.5 bg-[#F5F5FF] px-1 text-sm text-gray-700 z-10"
         >
           {label}
         </label>
@@ -25,25 +24,22 @@ const TextInput = ({
 
       {/* Input + Icon container */}
       <div className="mt-3 relative">
-        {Icon && (
-          <div className="absolute inset-y-0 left-4 flex items-center text-gray-400">
-            <Icon className="w-5 h-5" />
-          </div>
-        )}
+        <div className="flex items-center border border-gray-300 bg-[#F5F5FF] focus:bg-white rounded-full px-5 py-3 shadow-sm">
+          {/* Icon */}
+          {icon && <img src={icon} alt="" className="w-5 h-5 mr-3 shrink-0" />}
 
-        <input
-          id={name}
-          name={name}
-          type={type}
-          value={value}
-          onChange={onChange}
-          placeholder={placeholder}
-          required={required}
-          pattern={pattern}
-          className={`w-full ${
-            Icon ? "pl-11" : "pl-5"
-          } pr-5 py-3 pt-4 pb-2 border border-gray-300 rounded-full bg-[#F5F5FF] focus:bg-white text-gray-800 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition`}
-        />
+          <input
+            id={name}
+            name={name}
+            type={type}
+            value={value}
+            onChange={onChange}
+            placeholder={placeholder}
+            required={required}
+            pattern={pattern}
+            className="w-full bg-transparent text-gray-800 placeholder-gray-400 focus:outline-none"
+          />
+        </div>
       </div>
     </div>
   );

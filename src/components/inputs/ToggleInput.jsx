@@ -2,7 +2,7 @@ import React from "react";
 
 const ToggleInput = ({ label, checked, onChange }) => {
   return (
-    <label className="flex items-center justify-between cursor-pointer select-none border border-[#E5E7EB] rounded-full px-4 py-2 w-fit gap-4 bg-white">
+    <label className="flex items-center justify-between cursor-pointer select-none border border-[#E5E7EB] rounded-full px-4 py-2 w-fit gap-4 min-h-11 bg-white">
       <span className="text-sm font-medium text-gray-700">{label}</span>
 
       <div className="relative">

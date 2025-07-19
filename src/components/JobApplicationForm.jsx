@@ -4,9 +4,17 @@ import TextInput from "./inputs/TextInput.jsx";
 import FileInput from "./inputs/FileInput.jsx";
 import SelectInput from "./inputs/SelectInput.jsx";
 import TextareaInput from "./inputs/TextareaInput.jsx";
-
 import CheckboxInput from "./inputs/CheckboxInput.jsx";
+import DarkModeToggle from "./DarkModeToggle";
+
 import cityDistrictData from "../data/turkiye_city_district.json";
+
+import UserIcon from "../assets/icons/user.svg";
+import EmailIcon from "../assets/icons/email.svg";
+import PhoneIcon from "../assets/icons/phone.svg";
+import WalletIcon from "../assets/icons/wallet.svg";
+import LinkedinIcon from "../assets/icons/linkedin.svg";
+import LocationIcon from "../assets/icons/location.svg";
 
 const JobApplicationForm = () => {
   const [form, setForm] = useState({
@@ -29,6 +37,15 @@ const JobApplicationForm = () => {
     const { name, value, type, files, checked } = e.target;
 
     if (name === "salary" && Number(value) < 0) return;
+
+    if (name === "phone") {
+      // Sadece rakamlara izin ver
+      if (!/^\d*$/.test(value)) return;
+
+      if (value.length === 1 && value === "0") return;
+
+      if (value.length > 10) return;
+    }
 
     setForm((prev) => ({
       ...prev,
@@ -57,12 +74,15 @@ const JobApplicationForm = () => {
       <h2 className="text-[#5A5A59]">
         Aşağıdaki bilgileri doldurarak başvurunuzu tamamlayabilirsiniz.
       </h2>
+      <div className="flex flex-row items-center justify-between ">
+        <ToggleInput
+          label="Adres Bilgilerimi Eklemek İstiyorum"
+          checked={showAddress}
+          onChange={() => setShowAddress((prev) => !prev)}
+        />
 
-      <ToggleInput
-        label="Adres Bilgilerimi Eklemek İstiyorum"
-        checked={showAddress}
-        onChange={() => setShowAddress((prev) => !prev)}
-      />
+        <DarkModeToggle />
+      </div>
 
       <TextInput
         label="Adınız"
@@ -71,6 +91,7 @@ const JobApplicationForm = () => {
         onChange={handleChange}
         placeholder="Adınızı girin"
         required
+        icon={UserIcon}
       />
 
       <TextInput
@@ -80,6 +101,7 @@ const JobApplicationForm = () => {
         onChange={handleChange}
         placeholder="Soyadınızı girin"
         required
+        icon={UserIcon}
       />
 
       <TextInput
@@ -90,6 +112,19 @@ const JobApplicationForm = () => {
         onChange={handleChange}
         placeholder="E-posta adresinizi giriniz"
         required
+        icon={EmailIcon}
+      />
+
+      <TextInput
+        label="Telefon Numaranız"
+        name="phone"
+        type="tel"
+        inputMode="numeric"
+        value={form.phone}
+        onChange={handleChange}
+        placeholder="(5xx) 123 45 67"
+        required
+        icon={PhoneIcon}
       />
 
       {showAddress && (
@@ -106,6 +141,7 @@ const JobApplicationForm = () => {
               }))
             }
             options={Object.keys(cityDistrictData)}
+            icon={LocationIcon}
           />
 
           <SelectInput
@@ -120,14 +156,16 @@ const JobApplicationForm = () => {
             }
             options={form.city ? cityDistrictData[form.city] : []}
             disabled={!form.city}
+            icon={LocationIcon}
           />
           <TextareaInput
             label="Açık Adres"
             name="address"
             value={form.address}
             onChange={handleChange}
-            placeholder="Sokak, mahalle, daire vb. giriniz"
+            placeholder="Açık adres giriniz"
             required
+            icon={LocationIcon}
           />
         </>
       )}
@@ -140,6 +178,7 @@ const JobApplicationForm = () => {
         onChange={handleChange}
         placeholder="https://www.linkedin.com/in/"
         required
+        icon={LinkedinIcon}
       />
 
       <FileInput label="CV Yükleyin" name="cv" onChange={handleChange} />
@@ -148,12 +187,14 @@ const JobApplicationForm = () => {
         label="Maaş Beklentisi"
         name="salary"
         type="number"
+        inputMode="numeric"
         value={form.salary}
         onChange={handleChange}
         placeholder="00,000 ₺"
         min={0}
         step={100}
         required
+        icon={WalletIcon}
       />
 
       <CheckboxInput name="kvkk" checked={form.kvkk} onChange={handleChange} />

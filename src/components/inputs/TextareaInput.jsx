@@ -8,6 +8,7 @@ const TextareaInput = ({
   placeholder,
   required,
   maxLength = 100,
+  icon,
 }) => {
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
@@ -21,25 +22,36 @@ const TextareaInput = ({
       {label && (
         <label
           htmlFor={name}
-          className="absolute rounded-full -top-0 left-5 bg-[#F5F5FF] px-1 text-sm font-medium text-gray-700 z-10"
+          className="absolute rounded-full -top-2.5 left-5 bg-[#F5F5FF] px-1 text-sm font-medium text-gray-700 z-10"
         >
           {label}
         </label>
       )}
 
-      {/* Textarea */}
-      <textarea
-        id={name}
-        name={name}
-        value={value}
-        onChange={onChange}
-        onKeyDown={handleKeyDown}
-        placeholder={placeholder}
-        required={required}
-        maxLength={maxLength}
-        rows={1}
-        className="mt-3 w-full border border-gray-300 rounded-full px-5 py-3 pr-20 shadow-sm text-sm text-gray-700  bg-[#F5F5FF] focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none"
-      />
+      <div className="mt-3 flex items-center border border-gray-300 bg-[#F5F5FF] focus-within:bg-white rounded-full px-4 py-3 shadow-sm">
+        {/* Icon */}
+        {icon && (
+          <img
+            src={icon}
+            alt=""
+            className="w-5 h-5 mr-3 shrink-0 self-center"
+          />
+        )}
+
+        {/* Textarea */}
+        <textarea
+          id={name}
+          name={name}
+          value={value}
+          onChange={onChange}
+          onKeyDown={handleKeyDown}
+          placeholder={placeholder}
+          required={required}
+          maxLength={maxLength}
+          rows={1}
+          className="w-full bg-transparent text-sm leading-tight text-gray-700 placeholder-gray-400 focus:outline-none resize-none"
+        />
+      </div>
 
       {/* Counter */}
       <div className="absolute bottom-2 right-5 text-xs text-gray-400">
