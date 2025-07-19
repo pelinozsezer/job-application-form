@@ -21,7 +21,7 @@ const TextareaInput = ({
       {label && (
         <label
           htmlFor={name}
-          className="absolute -top-0 left-5 bg-white px-1 text-sm font-medium text-gray-700 z-10"
+          className="absolute rounded-full -top-0 left-5 bg-[#F5F5FF] px-1 text-sm font-medium text-gray-700 z-10"
         >
           {label}
         </label>
@@ -38,10 +38,10 @@ const TextareaInput = ({
         required={required}
         maxLength={maxLength}
         rows={1}
-        className="mt-3 w-full bg-gray-50 border border-gray-300 rounded-full px-5 py-3 pr-20 shadow-sm text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none"
+        className="mt-3 w-full border border-gray-300 rounded-full px-5 py-3 pr-20 shadow-sm text-sm text-gray-700  bg-[#F5F5FF] focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none"
       />
 
-      {/* Sayaç */}
+      {/* Counter */}
       <div className="absolute bottom-2 right-5 text-xs text-gray-400">
         {value.length}/{maxLength}
       </div>

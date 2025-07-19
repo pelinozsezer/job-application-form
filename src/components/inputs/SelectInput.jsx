@@ -9,14 +9,14 @@ const SelectInput = ({
   disabled = false,
 }) => {
   const sharedStyles =
-    "appearance-none w-full bg-gray-50 border border-gray-300 rounded-full px-5 py-3 shadow-sm text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500";
+    "appearance-none w-full bg-[#F5F5FF] focus:bg-white border border-gray-300 rounded-full px-5 py-3 shadow-sm text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500";
 
   return (
     <div className="relative w-full mb-4">
       {label && (
         <label
           htmlFor={name}
-          className="absolute -top-0 left-5 bg-white px-1 text-sm font-medium text-gray-700 z-10"
+          className="absolute rounded-full -top-0 left-5 bg-[#F5F5FF]  px-1 text-sm font-medium text-gray-700 z-10"
         >
           {label}
         </label>

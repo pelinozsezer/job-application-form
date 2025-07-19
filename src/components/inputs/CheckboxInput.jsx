@@ -8,7 +8,7 @@ const CheckboxInput = ({ name, checked, onChange }) => {
         name={name}
         checked={checked}
         onChange={onChange}
-        className="mt-1 accent-indigo-600"
+        className="mt-1 accent-[#3F2F70]"
         required
       />
       <span>

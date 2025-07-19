@@ -27,6 +27,9 @@ const JobApplicationForm = () => {
 
   const handleChange = (e) => {
     const { name, value, type, files, checked } = e.target;
+
+    if (name === "salary" && Number(value) < 0) return;
+
     setForm((prev) => ({
       ...prev,
       [name]:
@@ -46,12 +49,12 @@ const JobApplicationForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="mx-4 sm:mx-8 md:mx-auto mt-10 mb-10 bg-white backdrop-blur-md p-6 rounded-2xl shadow-xl space-y-4 max-w-md "
+      className="mx-4 sm:mx-8 md:mx-auto mt-10 mb-10 bg-[#F5F5FF] backdrop-blur-md p-6 rounded-2xl shadow-xl space-y-4 max-w-md "
     >
-      <h2 className="text-2xl font-bold text-gray-800">
+      <h2 className="text-2xl font-bold text-[#3F2F70]">
         [Title] İlanına Başvur
       </h2>
-      <h2 className="">
+      <h2 className="text-[#5A5A59]">
         Aşağıdaki bilgileri doldurarak başvurunuzu tamamlayabilirsiniz.
       </h2>
 
