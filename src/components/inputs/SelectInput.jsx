@@ -11,6 +11,7 @@ const SelectInput = ({
 }) => {
   return (
     <div className="relative w-full mb-4">
+      {/* Label */}
       {label && (
         <label
           htmlFor={name}
@@ -20,6 +21,7 @@ const SelectInput = ({
         </label>
       )}
 
+      {/* Select with optional icon */}
       <div className="mt-3 relative">
         {icon && (
           <div className="absolute top-1/2 left-4 -translate-y-1/2 flex items-center pointer-events-none">
@@ -39,8 +41,11 @@ const SelectInput = ({
         >
           <option value="">Seçiniz</option>
           {options.map((opt) => (
-            <option key={opt} value={opt}>
-              {opt}
+            <option
+              key={opt.provinceId || opt.districtId}
+              value={opt.provinceName || opt.districtName}
+            >
+              {opt.provinceName || opt.districtName}
             </option>
           ))}
         </select>

@@ -137,10 +137,10 @@ const JobApplicationForm = () => {
               setForm((prev) => ({
                 ...prev,
                 city: e.target.value,
-                district: "", // Reset district when city changes
+                district: "",
               }))
             }
-            options={Object.keys(cityDistrictData)}
+            options={cityDistrictData}
             icon={LocationIcon}
           />
 
@@ -154,10 +154,14 @@ const JobApplicationForm = () => {
                 district: e.target.value,
               }))
             }
-            options={form.city ? cityDistrictData[form.city] : []}
+            options={
+              cityDistrictData.find((item) => item.provinceName === form.city)
+                ?.districts || []
+            }
             disabled={!form.city}
             icon={LocationIcon}
           />
+
           <TextareaInput
             label="Açık Adres"
             name="address"
