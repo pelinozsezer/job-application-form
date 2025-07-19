@@ -1,2 +1,6 @@
-# job-application-form
-A responsive job application form built with React and Tailwind CSS, featuring location selection, file upload, form validation, dark mode support, Lottie animations, and Axios-based API integration.
+## ✅ To-Do List
+
+1. Add support for light and dark mode
+2. Adapt colors to match the Figma design
+3. Implement the desktop version of the form
+4. Show Toastify messages for form submission feedback
