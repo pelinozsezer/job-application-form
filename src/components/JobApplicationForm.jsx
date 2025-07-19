@@ -155,12 +155,23 @@ const JobApplicationForm = () => {
 
       <CheckboxInput name="kvkk" checked={form.kvkk} onChange={handleChange} />
 
-      <button
-        type="submit"
-        className="w-full bg-indigo-600 text-white font-semibold py-2 px-4 rounded hover:bg-indigo-700 transition"
-      >
-        Başvuruyu Gönder
-      </button>
+      <div className="flex justify-between gap-4">
+        <a
+          href="https://www.linkedin.com/jobs/view/4261141443/?refId=7737981c-4040-46fb-8a54-2ae241af348b&trackingId=oyratU8fQVKvOlE6s4u69Q%3D%3D"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-1/2 bg-white text-gray-800 border border-gray-300 font-semibold py-2 px-4 rounded-xl shadow hover:bg-gray-100 text-center"
+        >
+          İş Tanımına Geri Dön
+        </a>
+
+        <button
+          type="submit"
+          className="w-1/2 bg-indigo-800 text-white font-semibold py-2 px-4 rounded-xl shadow hover:bg-indigo-900 transition"
+        >
+          Başvuruyu Tamamla
+        </button>
+      </div>
     </form>
   );
 };
