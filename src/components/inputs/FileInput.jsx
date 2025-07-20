@@ -4,20 +4,30 @@ import UploadIcon from "../../assets/icons/upload.svg";
 const FileInput = ({ label, name, onChange, accept = ".pdf, jpeg,.png" }) => {
   return (
     <div className="relative w-full group">
-      {/* Label */}
+      {/* Floating label above the input field */}
       {label && (
         <label
           htmlFor={name}
-          className="absolute rounded-full -top-2 left-5 bg-[#F5F5FF] dark:bg-[#1e1e2f] group-focus-within:bg-white dark:group-focus-within:bg-[#dbd1fd] group-focus-within:dark:text-black px-1 text-sm font-medium text-gray-700 dark:text-gray-100 z-10"
+          className="absolute rounded-full -top-0 left-5 
+            bg-[#F5F5FF] dark:bg-[#1e1e2f] 
+            group-focus-within:bg-white dark:group-focus-within:bg-[#dbd1fd] 
+            group-focus-within:dark:text-black 
+            px-1 text-sm font-medium text-gray-700 dark:text-gray-100 z-10"
         >
           {label}
         </label>
       )}
 
-      {/* Self */}
       <div className="mt-3 relative">
-        <div className="flex items-center justify-between gap-4 border border-gray-300 dark:border-gray-600 bg-[#F5F5FF] dark:bg-[#1e1e2f] group-focus-within:bg-white dark:group-focus-within:bg-[#dbd1fd] rounded-full px-5 py-3 shadow-sm transition-colors duration-200">
-          {/* Icon + Dosya Türü Açıklaması */}
+        {/* Visible file upload container */}
+        <div
+          className="flex items-center justify-between gap-4 
+          border border-gray-300 dark:border-gray-600 
+          bg-[#F5F5FF] dark:bg-[#1e1e2f] 
+          group-focus-within:bg-white dark:group-focus-within:bg-[#dbd1fd] 
+          rounded-full px-5 py-3 shadow-sm transition-colors duration-200"
+        >
+          {/* Left: icon and file type info */}
           <div className="flex items-center gap-3">
             <img src={UploadIcon} alt="Upload" className="w-5 h-5 shrink-0" />
             <span className="text-xs text-gray-400 dark:text-gray-500">
@@ -25,13 +35,13 @@ const FileInput = ({ label, name, onChange, accept = ".pdf, jpeg,.png" }) => {
             </span>
           </div>
 
-          {/* Maks boyut bilgisi */}
+          {/* Right: max file size info */}
           <span className="text-xs text-gray-400 dark:text-gray-500 whitespace-nowrap">
-            (Maks. Boyut: 1 MB)
+            (Max Size: 1 MB)
           </span>
         </div>
 
-        {/* Tüm kutuyu tıklanabilir yapan input */}
+        {/* Invisible input covering entire container to make it clickable */}
         <input
           id={name}
           name={name}

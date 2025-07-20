@@ -3,6 +3,7 @@ import React from "react";
 const CheckboxInput = ({ name, checked, onChange }) => {
   return (
     <label className="flex items-start gap-2 text-sm text-gray-700 dark:text-gray-500">
+      {/* Checkbox input */}
       <input
         type="checkbox"
         name={name}
@@ -11,6 +12,8 @@ const CheckboxInput = ({ name, checked, onChange }) => {
         className="mt-1 accent-[#3F2F70] dark:accent-[#6e65a0]"
         required
       />
+
+      {/* Text with KVKK link */}
       <span>
         Tarafıma hizmet sunulması amacıyla paylaştığım kişisel verilerimin
         işlenmesine ilişkin{" "}

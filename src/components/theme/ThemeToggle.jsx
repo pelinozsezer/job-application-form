@@ -45,6 +45,7 @@ const ThemeToggle = () => {
 
   return (
     <button
+      type="button"
       onClick={toggleDark}
       className="p-2 rounded-2xl bg-[#F5F5FF] dark:bg-[#3F2F70] transition"
       aria-label="Toggle dark mode"
