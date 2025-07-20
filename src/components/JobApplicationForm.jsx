@@ -5,7 +5,7 @@ import FileInput from "./inputs/FileInput.jsx";
 import SelectInput from "./inputs/SelectInput.jsx";
 import TextareaInput from "./inputs/TextareaInput.jsx";
 import CheckboxInput from "./inputs/CheckboxInput.jsx";
-import DarkModeToggle from "./DarkModeToggle";
+import ThemeToggle from "./theme/ThemeToggle.jsx";
 
 import cityDistrictData from "../data/turkiye_city_district.json";
 
@@ -81,7 +81,7 @@ const JobApplicationForm = () => {
           onChange={() => setShowAddress((prev) => !prev)}
         />
 
-        <DarkModeToggle />
+        <ThemeToggle />
       </div>
 
       <TextInput
