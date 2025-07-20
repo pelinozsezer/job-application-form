@@ -8,7 +8,7 @@ const FileInput = ({ label, name, onChange, accept = ".pdf, jpeg,.png" }) => {
       {label && (
         <label
           htmlFor={name}
-          className="absolute rounded-full -top-0 left-5 
+          className="absolute rounded-full -top-2.5 left-5 
             bg-[#F5F5FF] dark:bg-[#1e1e2f] 
             group-focus-within:bg-white dark:group-focus-within:bg-[#dbd1fd] 
             group-focus-within:dark:text-black 
@@ -18,7 +18,7 @@ const FileInput = ({ label, name, onChange, accept = ".pdf, jpeg,.png" }) => {
         </label>
       )}
 
-      <div className="mt-3 relative">
+      <div className=" relative">
         {/* Visible file upload container */}
         <div
           className="flex items-center justify-between gap-4 

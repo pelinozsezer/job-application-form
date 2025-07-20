@@ -1,6 +1,6 @@
 import React from "react";
 
-const TextareaInput = ({
+const InputField = ({
   label,
   name,
   value,
@@ -9,14 +9,13 @@ const TextareaInput = ({
   required,
   maxLength,
   icon,
+  type = "text",
+  inputMode,
+  pattern,
+  min,
+  max,
+  step,
 }) => {
-  const handleKeyDown = (e) => {
-    // Prevent line breaks on Enter
-    if (e.key === "Enter") {
-      e.preventDefault();
-    }
-  };
-
   return (
     <div className="relative w-full group">
       {/* Floating label */}
@@ -33,7 +32,7 @@ const TextareaInput = ({
         </label>
       )}
 
-      {/* Container for textarea and icon */}
+      {/* Container for input and icon */}
       <div
         className="flex items-center border border-gray-300 dark:border-gray-600
           bg-[#F5F5FF] dark:bg-[#1e1e2f]
@@ -49,27 +48,31 @@ const TextareaInput = ({
           />
         )}
 
-        {/* Textarea field (single-line style) */}
-        <textarea
+        {/* Input field */}
+        <input
           id={name}
           name={name}
+          type={type}
+          inputMode={inputMode}
+          pattern={pattern}
           value={value}
           onChange={onChange}
-          onKeyDown={handleKeyDown}
           placeholder={placeholder}
           required={required}
           maxLength={maxLength}
-          rows={1}
+          min={min}
+          max={max}
+          step={step}
           className="w-full bg-transparent text-sm leading-tight
             text-gray-800 dark:text-gray-100 dark:focus:text-black
             placeholder-gray-400 dark:placeholder-gray-500
-            focus:outline-none resize-none"
+            focus:outline-none"
         />
       </div>
 
-      {/* Character counter (only if maxLength is provided) */}
+      {/* Character counter */}
       {typeof maxLength === "number" && (
-        <div className="absolute bottom-2 right-5 text-xs text-gray-400 dark:text-gray-500">
+        <div className="absolute bottom-1 right-4 text-xs text-gray-400 dark:text-gray-500">
           {value.length}/{maxLength}
         </div>
       )}
@@ -77,4 +80,4 @@ const TextareaInput = ({
   );
 };
 
-export default TextareaInput;
+export default InputField;

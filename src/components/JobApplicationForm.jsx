@@ -2,10 +2,9 @@ import { useState, useMemo } from "react";
 
 // Input components
 import ToggleInput from "./inputs/ToggleInput.jsx";
-import TextInput from "./inputs/TextInput.jsx";
 import FileInput from "./inputs/FileInput.jsx";
 import SelectInput from "./inputs/SelectInput.jsx";
-import TextareaInput from "./inputs/TextareaInput.jsx";
+import InputField from "./inputs/InputField.jsx";
 import CheckboxInput from "./inputs/CheckboxInput.jsx";
 import ThemeToggle from "./theme/ThemeToggle.jsx";
 
@@ -120,9 +119,10 @@ const JobApplicationForm = () => {
 
       {/* Main form inputs */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <TextareaInput
+        <InputField
           label="Adınız"
           name="name"
+          type="text"
           value={form.name}
           onChange={handleChange}
           required
@@ -130,16 +130,18 @@ const JobApplicationForm = () => {
           icon={UserIcon}
         />
 
-        <TextareaInput
+        <InputField
           label="Soyadınız"
           name="surname"
+          type="text"
           value={form.surname}
           onChange={handleChange}
           required
           placeholder="Soyadınızı girin"
           icon={UserIcon}
         />
-        <TextareaInput
+
+        <InputField
           label="E-Posta Adresiniz"
           name="email"
           type="email"
@@ -149,7 +151,8 @@ const JobApplicationForm = () => {
           placeholder="E-posta adresinizi giriniz"
           icon={EmailIcon}
         />
-        <TextareaInput
+
+        <InputField
           label="Telefon Numaranız"
           name="phone"
           type="tel"
@@ -182,9 +185,10 @@ const JobApplicationForm = () => {
               icon={LocationIcon}
             />
             <div className="md:col-span-2 -mt-1">
-              <TextareaInput
+              <InputField
                 label="Açık Adres"
                 name="address"
+                type="text"
                 value={form.address}
                 onChange={handleChange}
                 required
@@ -198,9 +202,10 @@ const JobApplicationForm = () => {
 
         {/* Social + File Inputs */}
         <div className="md:col-span-2 mt-2">
-          <TextareaInput
+          <InputField
             label="LinkedIn URL"
             name="linkedin"
+            type="url"
             value={form.linkedin}
             onChange={handleChange}
             required
@@ -210,7 +215,7 @@ const JobApplicationForm = () => {
         </div>
 
         <FileInput label="CV Yükleyin" name="cv" onChange={handleChange} />
-        <TextareaInput
+        <InputField
           label="Maaş Beklentisi"
           name="salary"
           type="number"
