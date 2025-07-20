@@ -17,18 +17,18 @@ const TextareaInput = ({
   };
 
   return (
-    <div className="relative w-full mb-4">
+    <div className="relative w-full mb-4 group">
       {/* Label */}
       {label && (
         <label
           htmlFor={name}
-          className="absolute rounded-full -top-2.5 left-5 bg-[#F5F5FF] px-1 text-sm font-medium text-gray-700 z-10"
+          className="absolute rounded-full -top-2.5 left-5 bg-[#F5F5FF] dark:bg-[#1e1e2f] group-focus-within:bg-white dark:group-focus-within:bg-[#dbd1fd] group-focus-within:dark:text-black px-1 text-sm font-medium text-gray-700 dark:text-gray-100 z-10"
         >
           {label}
         </label>
       )}
 
-      <div className="mt-3 flex items-center border border-gray-300 bg-[#F5F5FF] focus-within:bg-white rounded-full px-4 py-3 shadow-sm">
+      <div className="mt-3 flex items-center border border-gray-300 dark:border-gray-600 bg-[#F5F5FF] dark:bg-[#1e1e2f] group-focus-within:bg-white dark:group-focus-within:bg-[#dbd1fd] rounded-full px-4 py-3 shadow-sm transition-colors duration-200">
         {/* Icon */}
         {icon && (
           <img
@@ -49,12 +49,12 @@ const TextareaInput = ({
           required={required}
           maxLength={maxLength}
           rows={1}
-          className="w-full bg-transparent text-sm leading-tight text-gray-700 placeholder-gray-400 focus:outline-none resize-none"
+          className="w-full bg-transparent text-sm leading-tight text-gray-700 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none resize-none"
         />
       </div>
 
       {/* Counter */}
-      <div className="absolute bottom-2 right-5 text-xs text-gray-400">
+      <div className="absolute bottom-2 right-5 text-xs text-gray-400 dark:text-gray-500">
         {value.length}/{maxLength}
       </div>
     </div>

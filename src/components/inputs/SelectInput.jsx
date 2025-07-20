@@ -10,12 +10,12 @@ const SelectInput = ({
   icon,
 }) => {
   return (
-    <div className="relative w-full mb-4">
+    <div className="relative w-full mb-4 group">
       {/* Label */}
       {label && (
         <label
           htmlFor={name}
-          className="absolute rounded-full -top-2.5 left-5 bg-[#F5F5FF] px-1 text-sm font-medium text-gray-700 z-10"
+          className="absolute rounded-full -top-2.5 left-5 bg-[#F5F5FF] dark:bg-[#1e1e2f] group-focus-within:bg-white dark:group-focus-within:bg-[#dbd1fd] group-focus-within:dark:text-black px-1 text-sm font-medium text-gray-700 dark:text-gray-100 z-10"
         >
           {label}
         </label>
@@ -37,7 +37,7 @@ const SelectInput = ({
           disabled={disabled}
           className={`w-full ${
             icon ? "pl-12" : "pl-5"
-          } pr-5 py-3 bg-[#F5F5FF] focus:bg-white border border-gray-300 rounded-full shadow-sm text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 appearance-none`}
+          } pr-5 py-3 bg-[#F5F5FF] dark:bg-[#1e1e2f] group-focus-within:bg-white dark:group-focus-within:bg-[#dbd1fd] border border-gray-300 dark:border-gray-600 rounded-full shadow-sm text-sm text-gray-700 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 appearance-none transition-colors duration-200`}
         >
           <option value="">Seçiniz</option>
           {options.map((opt) => (

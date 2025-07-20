@@ -66,12 +66,12 @@ const JobApplicationForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="mx-4 sm:mx-8 md:mx-auto mt-10 mb-10 bg-[#F5F5FF] backdrop-blur-md p-6 rounded-2xl shadow-xl space-y-4 max-w-md "
+      className="mx-4 sm:mx-8 md:mx-auto mt-10 mb-10 bg-[#F5F5FF] dark:bg-[#1e1e2f] text-gray-800 dark:text-gray-100 backdrop-blur-md p-6 rounded-2xl shadow-xl space-y-4 max-w-md transition-colors duration-300"
     >
-      <h2 className="text-2xl font-bold text-[#3F2F70]">
+      <h2 className="text-2xl font-bold text-[#3F2F70] dark:text-white">
         [Title] İlanına Başvur
       </h2>
-      <h2 className="text-[#5A5A59]">
+      <h2 className="text-[#5A5A59] dark:text-gray-300">
         Aşağıdaki bilgileri doldurarak başvurunuzu tamamlayabilirsiniz.
       </h2>
       <div className="flex flex-row items-center justify-between ">
@@ -208,14 +208,14 @@ const JobApplicationForm = () => {
           href="https://www.linkedin.com/jobs/view/4261141443/?refId=7737981c-4040-46fb-8a54-2ae241af348b&trackingId=oyratU8fQVKvOlE6s4u69Q%3D%3D"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-1/2 bg-white text-gray-800 border border-gray-300 font-semibold py-2 px-4 rounded-xl shadow hover:bg-gray-100 text-center"
+          className="w-1/2 bg-white dark:bg-[#695c91] text-gray-800 dark:text-gray-400 border border-gray-300 dark:border-transparent font-semibold py-2 px-4 rounded-xl shadow hover:bg-gray-100 dark:hover:bg-[#574b77] text-center transition-colors"
         >
           İş Tanımına Geri Dön
         </a>
 
         <button
           type="submit"
-          className="w-1/2 bg-indigo-800 text-white font-semibold py-2 px-4 rounded-xl shadow hover:bg-indigo-900 transition"
+          className="w-1/2 bg-indigo-800 dark:bg-[#7054c7] text-white dark:text-gray-800 font-semibold py-2 px-4 rounded-xl shadow hover:bg-indigo-900 dark:hover:bg-[#c6b7fb] transition-colors"
         >
           Başvuruyu Tamamla
         </button>
