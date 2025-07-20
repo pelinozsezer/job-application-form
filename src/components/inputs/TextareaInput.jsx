@@ -7,7 +7,7 @@ const TextareaInput = ({
   onChange,
   placeholder,
   required,
-  maxLength = 100,
+  maxLength,
   icon,
 }) => {
   const handleKeyDown = (e) => {
@@ -61,16 +61,18 @@ const TextareaInput = ({
           maxLength={maxLength}
           rows={1}
           className="w-full bg-transparent text-sm leading-tight
-            text-gray-800 dark:text-gray-100 dark:focus:
+            text-gray-800 dark:text-gray-100 dark:focus:text-black
             placeholder-gray-400 dark:placeholder-gray-500
             focus:outline-none resize-none"
         />
       </div>
 
-      {/* Character counter */}
-      <div className="absolute bottom-2 right-5 text-xs text-gray-400 dark:text-gray-500">
-        {value.length}/{maxLength}
-      </div>
+      {/* Character counter (only if maxLength is provided) */}
+      {typeof maxLength === "number" && (
+        <div className="absolute bottom-2 right-5 text-xs text-gray-400 dark:text-gray-500">
+          {value.length}/{maxLength}
+        </div>
+      )}
     </div>
   );
 };

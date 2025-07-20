@@ -120,7 +120,7 @@ const JobApplicationForm = () => {
 
       {/* Main form inputs */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <TextInput
+        <TextareaInput
           label="Adınız"
           name="name"
           value={form.name}
@@ -129,7 +129,8 @@ const JobApplicationForm = () => {
           placeholder="Adınızı girin"
           icon={UserIcon}
         />
-        <TextInput
+
+        <TextareaInput
           label="Soyadınız"
           name="surname"
           value={form.surname}
@@ -138,7 +139,7 @@ const JobApplicationForm = () => {
           placeholder="Soyadınızı girin"
           icon={UserIcon}
         />
-        <TextInput
+        <TextareaInput
           label="E-Posta Adresiniz"
           name="email"
           type="email"
@@ -148,7 +149,7 @@ const JobApplicationForm = () => {
           placeholder="E-posta adresinizi giriniz"
           icon={EmailIcon}
         />
-        <TextInput
+        <TextareaInput
           label="Telefon Numaranız"
           name="phone"
           type="tel"
@@ -189,17 +190,17 @@ const JobApplicationForm = () => {
                 required
                 placeholder="Açık adres giriniz"
                 icon={LocationIcon}
+                maxLength={100}
               />
             </div>
           </>
         )}
 
         {/* Social + File Inputs */}
-        <div className="md:col-span-2">
-          <TextInput
+        <div className="md:col-span-2 mt-2">
+          <TextareaInput
             label="LinkedIn URL"
             name="linkedin"
-            type="url"
             value={form.linkedin}
             onChange={handleChange}
             required
@@ -209,7 +210,7 @@ const JobApplicationForm = () => {
         </div>
 
         <FileInput label="CV Yükleyin" name="cv" onChange={handleChange} />
-        <TextInput
+        <TextareaInput
           label="Maaş Beklentisi"
           name="salary"
           type="number"
