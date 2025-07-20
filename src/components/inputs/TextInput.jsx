@@ -12,11 +12,11 @@ const TextInput = ({
   icon,
 }) => {
   return (
-    <div className="relative w-full">
+    <div className="relative w-full group">
       {label && (
         <label
           htmlFor={name}
-          className="absolute rounded-full left-4 -top-2.5 bg-[#F5F5FF] px-1 text-sm text-gray-700 z-10"
+          className="absolute rounded-full left-4 -top-2.5 bg-[#F5F5FF] group-focus-within:bg-white px-1 text-sm text-gray-700 z-10 "
         >
           {label}
         </label>
@@ -24,7 +24,7 @@ const TextInput = ({
 
       {/* Input + Icon container */}
       <div className="mt-3 relative">
-        <div className="flex items-center border border-gray-300 bg-[#F5F5FF] focus:bg-white rounded-full px-5 py-3 shadow-sm">
+        <div className="flex items-center border border-gray-300 bg-[#F5F5FF] group-focus-within:bg-white rounded-full px-5 py-3 shadow-sm transition">
           {/* Icon */}
           {icon && <img src={icon} alt="" className="w-5 h-5 mr-3 shrink-0" />}
 
