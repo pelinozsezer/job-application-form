@@ -4,7 +4,7 @@ import UploadIcon from "../../assets/icons/upload.svg";
 const FileInput = ({ label, name, onChange, accept = ".pdf, jpeg,.png" }) => {
   return (
     <div className="relative w-full group">
-      {/* Floating label above the input field */}
+      {/* label */}
       {label && (
         <label
           htmlFor={name}
@@ -19,7 +19,7 @@ const FileInput = ({ label, name, onChange, accept = ".pdf, jpeg,.png" }) => {
       )}
 
       <div className=" relative">
-        {/* Visible file upload container */}
+        {/* container */}
         <div
           className="flex items-center justify-between gap-4 
           border border-gray-300 dark:border-gray-600 
@@ -27,7 +27,7 @@ const FileInput = ({ label, name, onChange, accept = ".pdf, jpeg,.png" }) => {
           group-focus-within:bg-white dark:group-focus-within:bg-[#dbd1fd] 
           rounded-full px-5 py-3 shadow-sm transition-colors duration-200"
         >
-          {/* Left: icon and file type info */}
+          {/* left: icon and file type info */}
           <div className="flex items-center gap-3">
             <img src={UploadIcon} alt="Upload" className="w-5 h-5 shrink-0" />
             <span className="text-xs text-gray-400 dark:text-gray-500">
@@ -35,13 +35,13 @@ const FileInput = ({ label, name, onChange, accept = ".pdf, jpeg,.png" }) => {
             </span>
           </div>
 
-          {/* Right: max file size info */}
+          {/* right: max file size */}
           <span className="text-xs text-gray-400 dark:text-gray-500 whitespace-nowrap">
             (Max Size: 1 MB)
           </span>
         </div>
 
-        {/* Invisible input covering entire container to make it clickable */}
+        {/* invisible input covering entire container to make it clickable! */}
         <input
           id={name}
           name={name}

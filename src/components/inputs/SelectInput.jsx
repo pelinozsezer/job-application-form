@@ -11,7 +11,7 @@ const SelectInput = ({
 }) => {
   return (
     <div className="relative w-full mb-4 group">
-      {/* Floating label above the select field */}
+      {/* label */}
       {label && (
         <label
           htmlFor={name}
@@ -25,16 +25,16 @@ const SelectInput = ({
         </label>
       )}
 
-      {/* Select box container */}
+      {/* select box container */}
       <div className="mt-3 relative">
-        {/* Optional left icon inside select field */}
+        {/* icon (optional) */}
         {icon && (
           <div className="absolute top-1/2 left-4 -translate-y-1/2 flex items-center pointer-events-none">
             <img src={icon} alt="" className="w-5 h-5" />
           </div>
         )}
 
-        {/* Select dropdown input */}
+        {/* select dropdown input */}
         <select
           id={name}
           name={name}
@@ -50,10 +50,9 @@ const SelectInput = ({
           focus:outline-none 
           appearance-none transition-colors duration-200`}
         >
-          {/* Default placeholder option */}
           <option value="">Seçiniz</option>
 
-          {/* Dynamic options rendered from province or district */}
+          {/* dynamic options rendered from province or district */}
           {options.map((opt) => (
             <option
               key={opt.provinceId || opt.districtId}

@@ -18,7 +18,7 @@ const InputField = ({
 }) => {
   return (
     <div className="relative w-full group">
-      {/* Floating label */}
+      {/* label */}
       {label && (
         <label
           htmlFor={name}
@@ -32,14 +32,14 @@ const InputField = ({
         </label>
       )}
 
-      {/* Container for input and icon */}
+      {/* container for input and icon */}
       <div
         className="flex items-center border border-gray-300 dark:border-gray-600
           bg-[#F5F5FF] dark:bg-[#1e1e2f]
           group-focus-within:bg-white dark:group-focus-within:bg-[#dbd1fd]
           rounded-full px-4 py-3 shadow-sm transition-colors duration-200"
       >
-        {/* Optional icon */}
+        {/* icon (optional) */}
         {icon && (
           <img
             src={icon}
@@ -48,7 +48,7 @@ const InputField = ({
           />
         )}
 
-        {/* Input field */}
+        {/* input field */}
         <input
           id={name}
           name={name}
@@ -70,7 +70,7 @@ const InputField = ({
         />
       </div>
 
-      {/* Character counter */}
+      {/* character counter */}
       {typeof maxLength === "number" && (
         <div className="absolute bottom-1 right-4 text-xs text-gray-400 dark:text-gray-500">
           {value.length}/{maxLength}
